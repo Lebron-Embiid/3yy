@@ -1,0 +1,76 @@
+.mui-segmented-control{
+	/*margin-top: 44px;*/
+	background: #c0c2c1;
+	border:0;
+	border-radius: 0;
+}
+.mui-segmented-control .mui-control-item.mui-active{
+	background: none;
+	color:#000;
+}
+.mui-segmented-control .mui-control-item{
+	border-left: 0;
+	color:#7c7c7c
+}
+.mui-table-view{
+	background: #f2f2f2;
+}
+.mui-table-view .mui-media-object{
+	line-height: 70px;
+    max-width: 70px;
+    height: 70px;
+}
+.mui-table-view .mui-media-body{
+	width:50%;
+	float: left;
+	font-size: 16px;
+}
+.mui-table-view .mui-media-body .mui-ellipsis span{
+	margin-right: 10px;
+	font-size: 12px;
+}
+.mui-table-view .mui-media-body .mui-ellipsis span img{
+	margin-top: -4px;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+.mui-table-view .download{
+	width:10%;
+	float: right;
+	margin-top: 10px;
+}
+.mui-table-view .download span{
+	display: block;
+}
+.mui-card .mui-card-header span{
+	font-size: 14px;
+}
+.mui-card .mui-card-header{
+    display: block;
+}
+.mui-card .mui-card-header p:last-child{
+	text-indent: 2em;
+}
+.mui-slider .mui-slider-group .mui-slider-item img{
+	width:30%;
+	/*margin: 0 auto;*/
+    display: block;
+    float: left;
+    margin-left: 10px;
+}
+.mui-card h4{
+	text-indent: 10px;
+	margin: 0;
+	padding-top: 15px;
+	background: #f2f2f2;
+}
+.mui-btn-outlined.mui-btn-primary{
+	border-color:#378bc9;
+	background: #378bc9;
+	color:#fff;
+	margin:10px auto;
+	display: block;
+	padding:3px 15px;
+	border-radius: 10px;
+	line-height: 20px;
+}

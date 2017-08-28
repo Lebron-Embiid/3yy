@@ -1,0 +1,42 @@
+*{
+	font-family: "微软雅黑";
+}
+.mui-bar-nav{
+	background: #0973bf;
+}
+.mui-bar-tab{
+	background: #0b8be2;
+}
+.mui-bar .mui-title img{
+	display: inline-block;
+	margin-right: 5px;
+	vertical-align: middle;
+	margin-bottom: 6px;
+}
+.mui-bar .mui-title{
+	line-height: 45px;
+	color:#fff;
+	font-size: 16px;
+}
+.mui-bar .mui-action-back{
+	color:#09c0fa;
+	font-size: 14px;
+	line-height: 26px;
+	font-weight: bold;
+}
+.mui-bar .mui-pull-right img{
+    margin-top: 12px;
+}
+.mui-bar-tab .mui-tab-item .mui-icon~.mui-tab-label{
+	color:#fff;
+	font-size: 15px;
+}
+.mui-bar-tab .mui-tab-item{
+	border-right: 1px solid #2798e8;
+}
+.mui-bar-tab .mui-tab-item.mui-active{
+	background:#1399ee;
+}
+.mui-bar-tab .mui-tab-item:last-child{
+	border:0;
+}

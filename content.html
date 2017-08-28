@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link href="css/mui.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="css/content.css" />
+	<script src="js/mui.min.js"></script>
+</head>
+<body>
+	<div id="slider" class="mui-slider" >
+	<script id="slider_tpl" type="text/x-handlebars-template">
+	  <div class="mui-slider-group mui-slider-loop">
+	    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+	    <div class="mui-slider-item mui-slider-item-duplicate">
+	      <a href="#">
+	        <img src="images/gy2.jpg">
+	      </a>
+	    </div>
+	    {{#each banner}}
+	    <!-- 第一张 -->
+	    <div class="mui-slider-item">
+	      <a href="#">
+	        <img src="{{this.banner_img}}">
+	      </a>
+	    </div>
+	    {{/each}}
+	    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+	    <div class="mui-slider-item mui-slider-item-duplicate">
+	      <a href="#">
+	        <img src="images/gy.jpg">
+	      </a>
+	    </div>
+	  </div>
+	  <div class="mui-slider-indicator">
+	    {{#each banner}}
+	    <div class="mui-indicator {{#if_first @index}}{{/if_first}}"></div>
+	    {{/each}}
+	  </div>
+	</script>
+	</div>
+
+	<div class="mui-segmented-control">
+	    <a class="mui-control-item mui-active" href="#item1">精品游戏</a>
+	    <a class="mui-control-item" href="#item2">应用软件</a>
+	    <a class="mui-control-item" href="#item3">棋牌天地</a>
+	</div>
+	<div id="item1" class="mui-slider-item mui-control-content mui-active">
+		<div class="mui-card mui-card-top">
+		<div class="mui-card-content">
+			<div class="mui-info">
+				<ul class="mui-table-view" id="game_list">
+					<script id="game_tpl" type="text/x-handlebars-template">
+					{{#each game}}
+				    <li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;" data-id="{{this.app_id}}" class="detail">
+				            <img class="mui-media-object mui-pull-left" src="{{this.app_icon}}">
+				            <div class="mui-media-body">
+				           		{{this.app_name}}
+				                <p class="mui-ellipsis"><span>{{this.category_name}}</span><span>{{this.app_size}}</span></p>
+				                <p class="mui-ellipsis">
+				                	<span><img src="images/good.jpg" alt="" />{{this.app_goodnum}}</span>
+			                		<span><img src="images/down.jpg" alt="" />{{this.app_downnum}}</span>
+				                </p>
+				            </div>
+				            <div class="download">
+			                	<span class="mui-icon"><img src="images/download.jpg" alt="" /></span>
+			                	<span class="mui-tab-label">下载</span>
+			                </div>
+				        </a>
+				    </li>
+				    {{/each}}
+					</script>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="mui-card mui-card-top">
+		<!--页眉，放置标题-->
+		<div class="mui-card-header">
+			<span>王者荣耀</span>
+			<span>半神之弓</span>
+			<span>600点券=60元</span>
+		</div>
+	</div>
+	</div>
+	<div id="item2" class="mui-slider-item mui-control-content">
+		<div class="mui-card mui-card-top">
+		<div class="mui-card-content">
+			<div class="mui-info">
+				<ul class="mui-table-view" id="soft_list">
+					<script id="soft_tpl" type="text/x-handlebars-template">
+					{{#each soft}}
+				    <li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;" data-id="{{this.app_id}}" class="detail">
+				            <img class="mui-media-object mui-pull-left" src="{{this.app_icon}}">
+				            <div class="mui-media-body">
+				           		{{this.app_name}}
+				                <p class="mui-ellipsis"><span>{{this.category_name}}</span><span>{{this.app_size}}</span></p>
+				                <p class="mui-ellipsis">
+				                	<span><img src="images/good.jpg" alt="" />{{this.app_goodnum}}</span>
+			                		<span><img src="images/down.jpg" alt="" />{{this.app_downnum}}</span>
+				                </p>
+				            </div>
+				            <div class="download">
+			                	<span class="mui-icon"><img src="images/download.jpg" alt="" /></span>
+			                	<span class="mui-tab-label">下载</span>
+			                </div>
+				        </a>
+				    </li>
+				    {{/each}}
+					</script>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="mui-card mui-card-top">
+		<!--页眉，放置标题-->
+		<div class="mui-card-header">
+			<span>腾讯QQ</span>
+			<span>应用软件</span>
+			<span>100Q币=100元</span>
+		</div>
+	</div>
+	</div>
+	<div id="item3" class="mui-slider-item mui-control-content">
+		<div class="mui-card mui-card-top">
+		<div class="mui-card-content">
+			<div class="mui-info">
+				<ul class="mui-table-view" id="face_list">
+				    <script id="face_tpl" type="text/x-handlebars-template">
+					{{#each face}}
+				    <li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;" data-id="{{this.app_id}}" class="detail">
+				            <img class="mui-media-object mui-pull-left" src="{{this.app_icon}}">
+				            <div class="mui-media-body">
+				           		{{this.app_name}}
+				                <p class="mui-ellipsis"><span>{{this.category_name}}</span><span>{{this.app_size}}</span></p>
+				                <p class="mui-ellipsis">
+				                	<span><img src="images/good.jpg" alt="" />{{this.app_goodnum}}</span>
+			                		<span><img src="images/down.jpg" alt="" />{{this.app_downnum}}</span>
+				                </p>
+				            </div>
+				            <div class="download">
+			                	<span class="mui-icon"><img src="images/download.jpg" alt="" /></span>
+			                	<span class="mui-tab-label">下载</span>
+			                </div>
+				        </a>
+				    </li>
+				    {{/each}}
+					</script>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="mui-card mui-card-top">
+		<!--页眉，放置标题-->
+		<div class="mui-card-header">
+			<span>欢乐斗地主</span>
+			<span>欢乐场11房</span>
+			<span>50000欢乐豆=100元</span>
+		</div>
+	</div>
+	</div>
+</body>
+<script src="js/zepto.min.js"></script>
+<script src="js/handlebars-v4.0.5.js"></script>
+<script>
+	$(function(){
+		Handlebars.registerHelper('if_first',function(value,options){
+			if(value == 0){
+				return 'mui-active';
+			}
+		})
+		$.get("http://sz1700018.pro.wdcase.com/3yy/index.php",{},function(data){
+			var list = {
+				"banner":data.banner,
+				"game":data.game,
+				"soft":data.soft,
+				"face":data.face
+			}
+			var source = $("#slider_tpl").html();//获取制定模板ID的html内容
+			var template = Handlebars.compile(source);//通过模板内容预编译模板
+			var html = template(list);//把数据传到模板里编译，返回回来的html
+			$("#slider").html(html);
+			mui.init();
+			mui('#slider').slider({
+			  interval:2000//自动轮播周期，若为0则不自动播放，默认为0；
+			}); 
+			
+			var source = $("#game_tpl").html();//获取制定模板ID的html内容
+			var template = Handlebars.compile(source);//通过模板内容预编译模板
+			var html = template(list);//把数据传到模板里编译，返回回来的html
+			$("#game_list").html(html);
+			
+			var source = $("#soft_tpl").html();//获取制定模板ID的html内容
+			var template = Handlebars.compile(source);//通过模板内容预编译模板
+			var html = template(list);//把数据传到模板里编译，返回回来的html
+			$("#soft_list").html(html);
+			
+			var source = $("#face_tpl").html();//获取制定模板ID的html内容
+			var template = Handlebars.compile(source);//通过模板内容预编译模板
+			var html = template(list);//把数据传到模板里编译，返回回来的html
+			$("#face_list").html(html);
+		},"json")
+	})
+	mui.plusReady(function(){
+		$(".mui-control-content").on("tap",".detail",function(){
+			mui.openWindow({
+				url:"detail.html",
+				id:"detail",
+				styles:{
+					top:"44px",
+					bottom:"50px"
+				},
+				extras:{
+					pid:$(this).attr("data-id")
+				}
+			})
+		})
+	})
+</script>
+</html>

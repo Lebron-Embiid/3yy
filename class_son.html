@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>分类子页</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link href="css/mui.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="css/content.css" />
+	<link rel="stylesheet" href="css/class.css" />
+	<script src="js/mui.min.js"></script>
+	<script type="text/javascript">
+		mui.init()
+	</script>
+</head>
+<body>
+	<!--<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left">返回</a>
+	    <h1 class="mui-title">赛车竞速</h1>
+	    <a class="mui-pull-right"><img src="images/person.jpg" alt="" /></a>
+	</header>-->
+	<div class="mui-segmented-control">
+	    <a class="mui-control-item mui-active" href="#item1">最新</a>
+	    <a class="mui-control-item" href="#item2">热门</a>
+	</div>
+	<div id="item1" class="mui-slider-item mui-control-content mui-active">
+		<div class="mui-card mui-card-top">
+		<div class="mui-card-content">
+			<div class="mui-info">
+				<ul class="mui-table-view" id="new_rank">
+					<script id="common_list" type="text/x-handlebars-template">
+					{{#each app_class}}
+				    <li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;" class="app_detail" data-id="{{this.app_id}}">
+				            <img class="mui-media-object mui-pull-left" src="{{this.app_icon}}">
+				            <div class="mui-media-body">
+				           		{{this.app_name}}
+				                <p class="mui-ellipsis"><span>{{this.category_name}}</span><span>{{this.app_size}}</span></p>
+				                <p class="mui-ellipsis"><span><img src="images/good.jpg" alt="" />{{this.app_goodnum}}</span><span><img src="images/down.jpg" alt="" />{{this.app_downnum}}</span></p>
+				            </div>
+				            <div class="download">
+			                	<span class="mui-icon"><img src="images/download.jpg" alt="" /></span>
+			                	<span class="mui-tab-label">下载</span>
+			                </div>
+				        </a>
+				    </li>
+				    {{/each}}
+				    </script>
+				    <!--<li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;">
+				            <img class="mui-media-object mui-pull-left" src="images/list2.jpg">
+				            <div class="mui-media-body">
+				           		宫爆老奶奶
+				                <p class="mui-ellipsis"><span>角色扮演</span><span>129.76M</span></p>
+				                <p class="mui-ellipsis"><span><img src="images/good.jpg" alt="" />50</span><span><img src="images/down.jpg" alt="" />1256</span></p>
+				            </div>
+				            <div class="download">
+			                	<span class="mui-icon"><img src="images/download.jpg" alt="" /></span>
+			                	<span class="mui-tab-label">下载</span>
+			                </div>
+				        </a>
+				    </li>
+				    <li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;">
+				            <img class="mui-media-object mui-pull-left" src="images/list3.jpg">
+				            <div class="mui-media-body">
+				           		神庙逃亡：魔镜……
+				               	<p class="mui-ellipsis"><span>角色扮演</span><span>129.76M</span></p>
+				                <p class="mui-ellipsis"><span><img src="images/good.jpg" alt="" />60</span><span><img src="images/down.jpg" alt="" />2256</span></p>
+				            </div>
+				            <div class="download">
+			                	<span class="mui-icon"><img src="images/download.jpg" alt="" /></span>
+			                	<span class="mui-tab-label">下载</span>
+			                </div>
+				        </a>
+				    </li>
+				    <li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;">
+				            <img class="mui-media-object mui-pull-left" src="images/list4.jpg">
+				            <div class="mui-media-body">
+				           		3D 终极狂飙2
+				               	<p class="mui-ellipsis"><span>角色扮演</span><span>129.76M</span></p>
+				                <p class="mui-ellipsis"><span><img src="images/good.jpg" alt="" />60</span><span><img src="images/down.jpg" alt="" />2256</span></p>
+				            </div>
+				            <div class="download">
+			                	<span class="mui-icon"><img src="images/download.jpg" alt="" /></span>
+			                	<span class="mui-tab-label">下载</span>
+			                </div>
+				        </a>
+				    </li>
+				    <li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;">
+				            <img class="mui-media-object mui-pull-left" src="images/list_6.jpg">
+				            <div class="mui-media-body">
+				           		3D 飞行器
+				               	<p class="mui-ellipsis"><span>角色扮演</span><span>129.76M</span></p>
+				                <p class="mui-ellipsis"><span><img src="images/good.jpg" alt="" />60</span><span><img src="images/down.jpg" alt="" />2256</span></p>
+				            </div>
+				            <div class="download">
+			                	<span class="mui-icon"><img src="images/download.jpg" alt="" /></span>
+			                	<span class="mui-tab-label">下载</span>
+			                </div>
+				        </a>
+				    </li>-->
+				</ul>
+			</div>
+		</div>
+		</div>
+	</div>
+	<div id="item2" class="mui-slider-item mui-control-content">
+		<div class="mui-card mui-card-top">
+		<div class="mui-card-content">
+			<div class="mui-info">
+				<ul class="mui-table-view" id="hot_rank">
+					<script id="common_list" type="text/x-handlebars-template">
+					{{#each app_class}}
+				    <li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;" class="app_detail" data-id="{{this.app_id}}">
+				            <img class="mui-media-object mui-pull-left" src="{{this.app_icon}}">
+				            <div class="mui-media-body">
+				           		{{this.app_name}}
+				                <p class="mui-ellipsis"><span>{{this.category_name}}</span><span>{{this.app_size}}</span></p>
+				                <p class="mui-ellipsis"><span><img src="images/good.jpg" alt="" />{{this.app_goodnum}}</span><span><img src="images/down.jpg" alt="" />{{this.app_downnum}}</span></p>
+				            </div>
+				            <div class="download">
+			                	<span class="mui-icon"><img src="images/download.jpg" alt="" /></span>
+			                	<span class="mui-tab-label">下载</span>
+			                </div>
+				        </a>
+				    </li>
+				    {{/each}}
+				    </script>
+				</ul>
+			</div>
+		</div>
+		</div>
+	</div>
+</body>
+<script src="js/zepto.min.js"></script>
+<script src="js/handlebars-v4.0.5.js"></script>
+<script>
+	mui.plusReady(function(){
+		var gid = plus.webview.currentWebview().gid;
+		$.get("http://sz1700018.pro.wdcase.com/3yy/index.php?sid="+gid,{},function(data){
+			var list = {
+				"app_class":data.app_class
+			}
+			var source = $("#common_list").html();//获取制定模板ID的html内容
+			var template = Handlebars.compile(source);//通过模板内容预编译模板
+			var html = template(list);//把数据传到模板里编译，返回回来的html
+			$("#new_rank").html(html);
+			
+			var source = $("#common_list").html();//获取制定模板ID的html内容
+			var template = Handlebars.compile(source);//通过模板内容预编译模板
+			var html = template(list);//把数据传到模板里编译，返回回来的html
+			$("#hot_rank").html(html);
+		},"json")
+		
+		$(".mui-control-content").on("tap",".app_detail",function(){
+			mui.openWindow({
+				url:"detail.html",
+				id:"detail",
+				styles:{
+					top:"44px",
+					bottom:"50px"
+				},
+				extras:{
+					pid:$(this).attr("data-id")
+				}
+			})
+		})
+	})
+</script>
+</html>

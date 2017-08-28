@@ -1,0 +1,57 @@
+.mui-input-group{
+	background:#EFEFF4;
+}
+.register{
+	background: #fff;
+}
+.mui-input-group .mui-input-row{
+	background: #fff;
+}
+.mui-input-group .username{
+	margin-top: 60px;
+}
+.mui-input-group .email{
+	margin-bottom: 20px;
+}
+.mui-input-group .self{
+	margin:20px 0;
+}
+.mui-input-group .self p{
+    line-height: 40px;
+}
+.mui-input-group .self p input[type=checkbox]{
+    margin-left: 15px;	
+} 
+.mui-input-group .mui-btn{
+    margin: 0 auto 20px;
+    width:95%;
+    padding:10px 0;
+}
+.mui-input-group:after,.mui-table-view:before,.mui-table-view:after,.mui-input-group .self:after{
+	height: 0;
+}
+.mui-input-group h5{
+	text-align: center;
+}
+.mui-input-group h5 span{
+    height: 10px;
+    width: 1px;
+    display: inline-block;
+    background: #55A8E4;
+}
+.mui-table-view{
+	background: none;
+    position: relative;
+    top:150px;
+}
+.mui-table-view .mui-table-view-cell a{
+	float: left;
+}
+.mui-table-view .mui-table-view-cell a:first-child{
+	padding-left:30%;
+}
+.mui-table-view .mui-table-view-cell a img{
+	margin-right: 20px;
+}
+
+

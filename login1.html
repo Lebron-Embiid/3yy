@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link href="css/mui.min.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/login.css"/>
+	<script src="js/mui.min.js"></script>
+	<script src="js/zepto.min.js"></script>
+	<script type="text/javascript">
+		mui.init()
+	</script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <h1 class="mui-title">登录</h1>
+	</header>
+	<form class="mui-input-group">
+	    <div class="mui-input-row username">
+            <input type="text" placeholder="请输入账号">
+	    </div>
+	    <div class="mui-input-row password">
+            <input type="password" placeholder="请输入密码">	    
+	    </div>
+	    <div class="mui-input-row self">
+	        <label>自动登录</label>
+	        <div class="mui-switch mui-switch-blue">
+		  		<div class="mui-switch-handle"></div>
+			</div>
+	    </div>
+	    <button type="button" class="mui-btn mui-btn-blue mui-btn-block">登录</button>
+		<h5>
+			<a href="javascript:;" id="register" data-url="register.html">注册账号</a>
+			<span></span>
+    		<a href="javascript:;" id="find" data-url="find_pass.html">忘记密码</a>
+		</h5>
+		<div class="mui-content-padded oauth-area">
+			
+		</div>
+	</form>
+</body>
+<script src="js/mui.enterfocus.js"></script>
+<script src="js/app.js"></script>
+<script>
+	(function($,doc){
+		$.init({
+			statusBarBackground:"#f7f7f7"
+		})
+		$.plusReady(function(){
+			plus.screen.lockOrientation("portrait-primary");//锁定屏幕为竖屏状态
+			var settings = app.getSettings();
+			var state = app.getState();
+			var mainPage = $.preload(
+				{
+					"id":"mains",
+					"url":"main.html"
+				}
+			);
+			var toMain = function(){
+				$.fire(mainPage,"show",null);
+				setTimeout(function(){
+					$.openWindow({
+						id:"mains",
+						show:{
+							aniShow:'pop-in'
+						},
+						waiting:{
+							autoShow:false
+						}
+					});
+				},0)
+			};
+			if(settings.autoLogin && state.token){
+				toMain();
+			}else{
+				app.setState(null);
+				//第三方登录
+				var authBtns = ['sina','wechat','qq'];
+				var auths = {};
+				var oauthArea = doc.querySelector(".oauth-area");
+				plus.oauth.getServices(function(services){
+					for(var i in services){
+						var service = services[i];
+						auths[service.id] = service;
+						if(~authBtns.indexOf(service.id)){
+							var isInstalled = app.isInstalled(service.id);
+							var btn = doc.createElement('div');
+							btn.setAttribute('class','oauth-btn'+(!isInstalled && service.id === 'wechat'?('disabled'):''));
+							btn.authId = service.id;
+							btn.style.backgroundImage = 'url("images/'+service.id+'png")';
+							oauthArea.appendChild(btn);
+						}
+					}
+					$(oauthArea).on('tap','oauth-btn',function(){
+						if(this.classList.contains('disabled')){
+							plus.nativeUI.toast("Your phone don't have WeChat!");
+							return;
+						}
+						var auth = auths[this.authId];
+						var waiting = plus.nativeUI.showWaiting();
+						auth.login(function(){
+							waiting.close();
+							plus.nativeUI.toast("Login Success!");
+							auth.getUserInfo(function(){
+								plus.nativeUI.toast("Get UserInfo Success!");
+								var name = auth.userInfo.nickname || auth.userInfo.name;
+								app.createState(name,function(){
+									toMain();
+								});
+							},function(e){
+								plus.nativeUI.toast("Get UserInfo Failed!"+e.message);
+							});
+						},function(e){
+							plus.nativeUI.toast("Login Failed!"+e.message);
+						})
+					})
+				},function(e){
+					oauthArea.style.display = "none";
+					plus.nativeUI.toast("Login Failed!"+e.message);
+				});
+			}
+			setTimeout(function() {
+				//关闭 splash
+				plus.navigator.closeSplashscreen();
+			}, 600);
+		})
+	}(mui,document))
+	mui(".mui-input-group").on("tap","#register",function(){
+		var resurl = $(this).attr('data-url');
+		if(resurl == 'register.html'){
+			mui.openWindow({
+				url:'register.html',
+				id:'register',
+				styles:{
+					top:'44px',
+					bottom:'50px'
+				}
+			})
+		}
+		switch(resurl){
+			case 'register.html':
+			break;
+		}
+	})
+	mui(".mui-input-group").on("tap","#find",function(){
+		var passurl = $(this).attr('data-url');
+		if(passurl == 'find_pass.html'){
+			mui.openWindow({
+				url:'find_pass.html',
+				id:'find_pass',
+				styles:{
+					top:'44px',
+					bottom:'50px'
+				}
+			})
+		}
+		switch(passurl){
+			case 'find_pass.html':
+			break;
+		}
+	})
+</script>
+</html>

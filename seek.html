@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<style>
+			.mui-bar-nav a{color:#fff;}
+			#texs{margin-left: 7%;border-radius: 20px;width: 75%; height: 30px;margin-top: 5px;}
+			#submit{text-align:ccenter;position: absolute;right: 15%;height: 25px;line-height: 5px;top: 8px;background: white;border: none;border-left:1px solid gray;color:black}
+			.seek-content{width: 95%;margin: 15% auto;}
+			.seek-content h4{color: darkgray;margin-bottom: 20px;}
+			.seek-content ul li #link{padding:10px;display:block;margin:0 10px 10px 10px;float:left;height: 40px;background: #0871C2;border-radius: 10px;color: white;}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background:#0871c2 ;">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<input type="text" name="username" id='texs'/>
+			<input type="submit" id="submit" value="搜索" />
+		</header>
+		<div class="seek-content">
+			<ul class="mui-table-view">
+			    <li class="mui-table-view-cell">
+			    	<h4>热门应用</h4>
+			    	<a id="link" href="#" style="width: 20%;">WiFi</a>
+			    	<a id="link" href="#" style="width: 20%;">新闻</a>
+			    	<a id="link" href="#" style="width: 30%;">土豆视频</a>
+			    	<a id="link" href="#" style="width: 30%;">搜狐视频</a>
+			    	<a id="link" href="#" style="width: 30%;">大众点评</a>
+			    	<a id="link" href="#" style="width: 30%;">携程旅游</a>
+			    </li>
+			    <li class="mui-table-view-cell">
+			    	<h4>热门游戏</h4>
+			    	<a id="link" href="#" style="width: 30%;">王者荣耀</a>
+			    	<a id="link" href="#" style="width: 30%;">最冏游戏</a>
+			    	<a id="link" href="#" style="width: 36%;">封神召唤师</a>
+			    	<a id="link" href="#" style="width: 30%;">我的世界</a>
+			    	<a id="link" href="#" style="width: 40%;">魂斗罗：归来</a>
+			    	<a id="link" href="#" style="width: 30%;">单机游戏</a>
+			    </li>
+			</ul>
+		</div>
+	</body>
+</html>

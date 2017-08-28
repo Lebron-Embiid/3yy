@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>分类</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link href="css/mui.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="css/class.css" />
+	<script src="js/mui.min.js"></script>
+	<script type="text/javascript">
+		mui.init()
+	</script>
+</head>
+<body>
+	<!--<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left">返回</a>
+	    <h1 class="mui-title">分类</h1>
+	    <a class="mui-pull-right"><img src="images/person.jpg" alt="" /></a>
+	</header>-->
+	<div class="mui-segmented-control">
+	    <a class="mui-control-item mui-active" href="#item1">游戏</a>
+	    <a class="mui-control-item" href="#item2">软件</a>
+	    <a class="mui-control-item" href="#item3">棋牌</a>
+	</div>
+	<div id="item1" class="mui-slider-item mui-control-content mui-active">
+		<div class="mui-card mui-card-top">
+		<div class="mui-card-content">
+			<div class="mui-info">
+				<ul class="mui-table-view mui-list-view" id="game_box">
+				    <script id="game_class" type="text/x-handlebars-template">
+					{{#each game}}
+				    <li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;" class="classify" data-id="{{this.app_category_id}}">
+				            <img class="mui-media-object mui-pull-right" src="{{this.app_icon}}">
+				            <div class="mui-media-body">
+				           		<h4>{{this.class_name}}</h4>
+				               	<p class="mui-ellipsis"><span>{{this.app_desc}}</span></p>
+				                <!--<p class="mui-ellipsis"><span>凡仙（Q版仙侠）</span></p>-->
+				            </div>
+				        </a>
+				    </li>
+				    {{/each}}
+					</script>
+				    <!--<li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;">
+				            <img class="mui-media-object mui-pull-right" src="images/cat2.jpg">
+				            <div class="mui-media-body">
+				           		<h4>益智休闲</h4>
+				               	<p class="mui-ellipsis"><span>秦时明月（逆战千年）</span></p>
+				                <p class="mui-ellipsis"><span>摩卡消消乐</span></p>
+				            </div>
+				        </a>
+				    </li>
+				    <li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;">
+				            <img class="mui-media-object mui-pull-right" src="images/cat3.jpg">
+				            <div class="mui-media-body">
+				           		<h4>动作冒险</h4>
+				               	<p class="mui-ellipsis"><span>陆战坦克先锋</span></p>
+				                <p class="mui-ellipsis"><span>机甲格斗</span></p>
+				            </div>
+				        </a>
+				    </li>
+				    <li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;">
+				            <img class="mui-media-object mui-pull-right" src="images/cat4.jpg">
+				            <div class="mui-media-body">
+				           		<h4>赛车竞速</h4>
+				               	<p class="mui-ellipsis"><span>地铁跑酷</span></p>
+				                <p class="mui-ellipsis"><span>天天酷跑</span></p>
+				            </div>
+				        </a>
+				    </li>
+				    <li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;">
+				            <img class="mui-media-object mui-pull-right" src="images/cat5.jpg">
+				            <div class="mui-media-body">
+				           		<h4>模拟经营</h4>
+				               	<p class="mui-ellipsis"><span>幻想英雄（海贼来袭）</span></p>
+				                <p class="mui-ellipsis"><span>天天杀三国（龙将）</span></p>
+				            </div>
+				        </a>
+				    </li>
+				    <li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;">
+				            <img class="mui-media-object mui-pull-right" src="images/cat6.jpg">
+				            <div class="mui-media-body">
+				           		<h4>射击飞行</h4>
+				               	<p class="mui-ellipsis"><span>雷电2</span></p>
+				                <p class="mui-ellipsis"><span>雷霆战机</span></p>
+				            </div>
+				        </a>
+				    </li>
+				    <li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;">
+				            <img class="mui-media-object mui-pull-right" src="images/cat7.jpg">
+				            <div class="mui-media-body">
+				           		<h4>策略塔防</h4>
+				               	<p class="mui-ellipsis"><span>帝国时代</span></p>
+				                <p class="mui-ellipsis"><span>红警</span></p>
+				            </div>
+				        </a>
+				    </li>-->
+				</ul>
+			</div>
+		</div>
+		</div>
+	</div>
+	<div id="item2" class="mui-slider-item mui-control-content">
+		<div class="mui-card mui-card-top">
+		<div class="mui-card-content">
+			<div class="mui-info">
+				<ul class="mui-table-view mui-list-view" id="soft_box">
+					<script id="soft_class" type="text/x-handlebars-template">
+					{{#each soft}}
+				    <li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;" class="classify" data-id="{{this.app_category_id}}">
+				            <img class="mui-media-object mui-pull-right" src="{{this.app_icon}}">
+				            <div class="mui-media-body">
+				           		<h4>{{this.class_name}}</h4>
+				               	<p class="mui-ellipsis"><span>{{this.app_desc}}</span></p>
+				                <!--<p class="mui-ellipsis"><span>凡仙（Q版仙侠）</span></p>-->
+				            </div>
+				        </a>
+				    </li>
+				    {{/each}}
+					</script>
+				</ul>
+			</div>
+		</div>
+		</div>
+	</div>
+	<div id="item3" class="mui-slider-item mui-control-content">
+		<div class="mui-card mui-card-top">
+		<div class="mui-card-content">
+			<div class="mui-info">
+				<ul class="mui-table-view mui-list-view" id="face_box">
+					<script id="face_class" type="text/x-handlebars-template">
+					{{#each face}}
+				    <li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;" class="classify" data-id="{{this.app_category_id}}">
+				            <img class="mui-media-object mui-pull-right" src="{{this.app_icon}}">
+				            <div class="mui-media-body">
+				           		<h4>{{this.class_name}}</h4>
+				               	<p class="mui-ellipsis"><span>{{this.app_desc}}</span></p>
+				                <!--<p class="mui-ellipsis"><span>凡仙（Q版仙侠）</span></p>-->
+				            </div>
+				        </a>
+				    </li>
+				    {{/each}}
+					</script>
+				</ul>
+			</div>
+		</div>
+		</div>
+	</div>
+</body>
+<script src="js/zepto.min.js"></script>
+<script src="js/handlebars-v4.0.5.js"></script>
+<script>
+	$(function(){
+		$.get("http://sz1700018.pro.wdcase.com/3yy/index.php",{},function(data){
+			var list = {
+				"game":data.game_classfiy,
+				"soft":data.soft_classfiy,
+				"face":data.face_classfiy
+			}
+			var source = $("#game_class").html();//获取制定模板ID的html内容
+			var template = Handlebars.compile(source);//通过模板内容预编译模板
+			var html = template(list);//把数据传到模板里编译，返回回来的html			
+			$("#game_box").html(html);
+			
+			var source = $("#soft_class").html();//获取制定模板ID的html内容
+			var template = Handlebars.compile(source);//通过模板内容预编译模板
+			var html = template(list);//把数据传到模板里编译，返回回来的html			
+			$("#soft_box").html(html);
+			
+			var source = $("#face_class").html();//获取制定模板ID的html内容
+			var template = Handlebars.compile(source);//通过模板内容预编译模板
+			var html = template(list);//把数据传到模板里编译，返回回来的html			
+			$("#face_box").html(html);
+		},"json")
+	})
+	mui.plusReady(function(){
+		$(".mui-control-content").on("tap",".classify",function(){
+			mui.openWindow({
+				url:"class_son.html",
+				id:"class_son",
+				styles:{
+					top:"44px",
+					bottom:"50px"
+				},
+				extras:{
+					gid:$(this).attr("data-id")
+				}
+			})
+		})
+	})
+</script>
+</html>

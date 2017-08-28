@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link href="css/mui.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="css/content.css" />
+	<script src="js/mui.min.js"></script>
+	<script type="text/javascript">
+		mui.init()
+	</script>
+</head>
+
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title">社区</h1>
+	</header>
+	<div class="mui-segmented-control" style="margin-top: 44px;">
+	    <a class="mui-control-item mui-active" href="#item1">大家都在玩</a>
+	    <a class="mui-control-item" href="#item2">最新发布</a>
+	</div>
+	<div id="item1" class="mui-slider-item mui-control-content mui-active">
+		<script id="all_tpl" type="text/x-handlebars-template">
+		<div class="mui-card mui-card-top">
+		<div class="mui-card-content">
+			<div class="mui-info">
+				<ul class="mui-table-view">
+				    {{#each game}}
+				    <li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;">
+				            <img class="mui-media-object mui-pull-left" src="{{this.app_icon}}">
+				            <div class="mui-media-body">
+				                {{this.app_name}}
+				                <p class="mui-ellipsis">{{this.app_desc}}</p>
+				            </div>
+				        </a>
+				    </li>
+				    {{/each}}
+				</ul>
+			</div>
+		</div>
+	</div>
+	</script>
+	</div>
+	<div id="item2" class="mui-slider-item mui-control-content">
+		<script id="new_tpl" type="text/x-handlebars-template">
+		<div class="mui-card mui-card-top">
+		<div class="mui-card-content">
+			<div class="mui-info">
+				<ul class="mui-table-view">
+				    {{#each soft}}
+				    <li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;">
+				            <img class="mui-media-object mui-pull-left" src="{{this.app_icon}}">
+				            <div class="mui-media-body">
+				                {{this.app_name}}
+				                <p class="mui-ellipsis">{{this.app_desc}}</p>
+				            </div>
+				        </a>
+				    </li>
+				    {{/each}}
+				</ul>
+			</div>
+		</div>
+	</div>
+	</script>
+	</div>
+<script src="js/zepto.min.js"></script>
+<script src="js/handlebars-v4.0.5.js"></script>
+</body>
+<script>
+	$(function(){
+		$.get("http://sz1700018.pro.wdcase.com/3yy/index.php",{},function(data){
+			var list = {
+				"banner":data.banner,
+				"game":data.game,
+				"soft":data.soft,
+				"face":data.face
+			}
+			var source = $("#all_tpl").html();//获取制定模板ID的html内容
+			var template = Handlebars.compile(source);//通过模板内容预编译模板
+			var html = template(list);//把数据传到模板里编译，返回回来的html
+			$("#item1").html(html);
+			
+			var source = $("#new_tpl").html();//获取制定模板ID的html内容
+			var template = Handlebars.compile(source);//通过模板内容预编译模板
+			var html = template(list);//把数据传到模板里编译，返回回来的html
+			$("#item2").html(html);
+		},"json");
+	})
+</script>
+</html>
